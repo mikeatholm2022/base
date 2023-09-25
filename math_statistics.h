@@ -278,7 +278,7 @@ namespace chaos
                         v = m_mean;
                         return true;
                     }
-                    return  false;
+                    return false;
                 }
 
                 bool get_stdev(double& v)
@@ -288,7 +288,7 @@ namespace chaos
                         v = m_stdev;
                         return true;
                     }
-                    return  false;
+                    return false;
                 }
 
                 bool get_skew(double& v)
@@ -298,7 +298,7 @@ namespace chaos
                         v = m_skew;
                         return true;
                     }
-                    return  false;
+                    return false;
                 }
 
                 bool get_kurtosis(double& v)
@@ -308,7 +308,7 @@ namespace chaos
                         v = m_kurt;
                         return true;
                     }
-                    return  false;
+                    return false;
                 }
 
                 bool get_min_max_vol(double& v)
@@ -318,7 +318,7 @@ namespace chaos
                         v = m_min_max_vol;
                         return true;
                     }
-                    return  false;
+                    return false;
                 }
 
                 bool get_values(double& m, double& std, double& sk, double& ku)
@@ -331,14 +331,14 @@ namespace chaos
                         ku = m_kurt;
                         return true;
                     }
-                    return  false;
+                    return false;
                 }
 
                 void add(double v)
                 {
                     m_last_value = v;
                     m_values.push_back(v);
-                    if(m_values.size() >= m_window)
+                    if(m_values.size() > m_window)
                         m_values.erase(m_values.begin());
 
                     // Only start once the buffer is 75% full
