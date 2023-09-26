@@ -85,6 +85,7 @@ namespace chaos
         virtual ~Logger();
         static Logger* instance();
 
+        void join() { m_thread->join(); }
         void log_information(std::int32_t state, const std::string& msg, const std::string& file, std::int32_t line);
         void stop() 
         { 

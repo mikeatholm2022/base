@@ -39,7 +39,7 @@ namespace chaos
     //
     static std::string time_as_string_greg(char const* format = "%Y-%m-%d %f")
     {
-        boost::posix_time::ptime now = boost::posix_time::second_clock::universal_time();
+        boost::posix_time::ptime now = boost::posix_time::microsec_clock::universal_time();
         boost::gregorian::date_facet* df1 = new boost::gregorian::date_facet(format);
         std::ostringstream stream;
         stream.imbue(std::locale(stream.getloc(), df1));
@@ -56,7 +56,7 @@ namespace chaos
     //
     static std::string time_as_string_posix(char const* format = "%Y-%m-%d %H:%M:%S")
     {
-        boost::posix_time::ptime now = boost::posix_time::second_clock::universal_time();
+        boost::posix_time::ptime now = boost::posix_time::microsec_clock::universal_time();
         boost::posix_time::time_facet* df1 = new boost::posix_time::time_facet(format);
         std::ostringstream stream;
         stream.imbue(std::locale(stream.getloc(), df1));
